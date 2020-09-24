@@ -16,6 +16,12 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex: 1;
     font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: .5rem 0;
   }
 `;
 
