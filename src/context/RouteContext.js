@@ -6,7 +6,7 @@ import React, {
   useEffect,
   useRef,
 } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import RouteAction from "../constants/RouteAction";
 
 export const RouteContext = createContext({});
@@ -36,12 +36,15 @@ function routeReducer(state, { type, payload }) {
 }
 
 function RouteContextProvider({ children, routes }) {
+  const location = useLocation();
   const initialState = useMemo(
     () => ({
       routes,
-      currentRouteIndex: 0,
+      currentRouteIndex: routes.findIndex(
+        (route) => route.path === location.pathname
+      ),
     }),
-    [routes]
+    [routes, location.pathname]
   );
   const [state, dispatch] = useReducer(routeReducer, initialState);
 
