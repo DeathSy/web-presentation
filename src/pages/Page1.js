@@ -5,8 +5,8 @@ import Typography from '../components/Typography'
 function Page1() {
   return (
     <Presentation contentDirection="column" alignments="center-center">
-      <Typography as="h1">This is a Title Content</Typography>
-      <Typography as="h4">this is an ordinary subtitle</Typography>
+      <Typography as="h1">Modern Frontend Development Part 1</Typography>
+      <Typography as="h4">Introduction to ReactJS</Typography>
     </Presentation>
   );
 }
