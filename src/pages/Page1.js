@@ -6,7 +6,7 @@ function Page1() {
   return (
     <Presentation contentDirection="column" alignments="center-center">
       <Typography as="h1">Modern Frontend Development Part 1</Typography>
-      <Typography as="h4">Introduction to ReactJS</Typography>
+      <Typography as="h4">Introduction to modern frontend development with ReactJS</Typography>
     </Presentation>
   );
 }
