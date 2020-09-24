@@ -1,5 +1,6 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import styled from "styled-components";
 import { useRoute, useRouteAction } from "./context/RouteContext";
 import Icon from "./components/Icon";
@@ -36,15 +37,20 @@ const PresentationAction = styled.div`
 
 function Routes() {
   const routes = useRoute();
-  const { prev, next } = useRouteAction()
+  const { prev, next } = useRouteAction();
+  const location = useLocation();
 
   return (
-    <AppContainer>
-      <Switch>
-        {routes.map((route) => (
-          <Route {...route} />
-        ))}
-      </Switch>
+    <TransitionGroup>
+      <CSSTransition key={location.key} timeout={200} classNames="fade">
+        <AppContainer>
+          <Switch {...{ location }}>
+            {routes.map((route) => (
+              <Route {...route} />
+            ))}
+          </Switch>
+        </AppContainer>
+      </CSSTransition>
       <PresentationActionContainer>
         <PresentationAction to="/" onClick={prev}>
           <Icon name="ChevronLeft" />
@@ -53,7 +59,7 @@ function Routes() {
           <Icon name="ChevronRight" />
         </PresentationAction>
       </PresentationActionContainer>
-    </AppContainer>
+    </TransitionGroup>
   );
 }
 
