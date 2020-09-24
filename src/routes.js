@@ -52,10 +52,10 @@ function Routes() {
         </AppContainer>
       </CSSTransition>
       <PresentationActionContainer>
-        <PresentationAction to="/" onClick={prev}>
+        <PresentationAction onClick={prev}>
           <Icon name="ChevronLeft" />
         </PresentationAction>
-        <PresentationAction to="/page2" onClick={next}>
+        <PresentationAction onClick={next}>
           <Icon name="ChevronRight" />
         </PresentationAction>
       </PresentationActionContainer>
