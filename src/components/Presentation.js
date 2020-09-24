@@ -13,7 +13,7 @@ const PresentationContainer = styled.div`
   background-color: ${(props) => props.theme.backgroundColor};
   display: flex;
   width: 100%;
-  height: 56.25%;
+  height: ${(props) => 1 / props.theme.aspectRatio * 100}%;
 `;
 
 function Presentation({ children }) {

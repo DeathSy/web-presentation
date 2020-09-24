@@ -12,6 +12,7 @@ function PresentationThemeProvider({
       value={{
         backgroundColor,
         blankspaceBackgroundColor: Theme.BLANKSPACE_BACKGROUND_COLOR,
+        aspectRatio: Theme.ASPECT_RATIO
       }}
     >
       {children}
