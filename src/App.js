@@ -1,13 +1,12 @@
 import React, { Fragment } from "react";
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
+import { Helmet } from "react-helmet";
 import PresentationThemeProvider from "./context/PresentationTheme";
-import { Theme } from './constants/theme'
+import { Theme } from "./constants/theme";
 import Routes from "./routes";
 
 const GlobalStyle = createGlobalStyle`
-  @import url(${Theme.FONT});
-
   ${normalize}
 
   html, body, #root {
@@ -30,6 +29,10 @@ function App() {
   return (
     <Fragment>
       <GlobalStyle />
+      <Helmet>
+        <meta charSet="utf-8" />
+        <link href={Theme.FONT} rel="stylesheet" />
+      </Helmet>
       <PresentationThemeProvider>
         <Routes />
       </PresentationThemeProvider>
