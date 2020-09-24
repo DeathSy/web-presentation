@@ -8,7 +8,7 @@ function Page2() {
     <Presentation contentDirection="column" alignments="center-center">
       <Typography as="h2">Before we start learn how to use ReactJS</Typography>
       <Typography as="h2">Let start with some old school way using</Typography>
-      <Code>document.createElement</Code>
+      <Code>document.createElement("HTML_TAG_NAME")</Code>
     </Presentation>
   );
 }
