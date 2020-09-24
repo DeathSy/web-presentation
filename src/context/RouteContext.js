@@ -1,6 +1,7 @@
 import React, {
   createContext,
   useMemo,
+  useCallback,
   useContext,
   useReducer,
   useEffect,
@@ -65,6 +66,23 @@ export function useRouteAction() {
   const history = useHistory();
   const prevRouteIndex = useRef(state.currentRouteIndex);
 
+  const next = useCallback(() => dispatch({ type: RouteAction.next }), [
+    dispatch,
+  ]);
+
+  const prev = useCallback(() => dispatch({ type: RouteAction.prev }), [
+    dispatch,
+  ]);
+
+  const handleKeyPress = useCallback(
+    (event) => {
+      if (event.code === "ArrowRight" || event.code === "Space") next();
+
+      if (event.code === "ArrowLeft") prev();
+    },
+    [next, prev]
+  );
+
   useEffect(() => {
     if (prevRouteIndex.current !== state.currentRouteIndex) {
       history.push(state.routes[state.currentRouteIndex].path);
@@ -72,9 +90,11 @@ export function useRouteAction() {
     }
   }, [history, state.currentRouteIndex, state.routes]);
 
-  const next = () => dispatch({ type: RouteAction.next });
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyPress);
 
-  const prev = () => dispatch({ type: RouteAction.prev });
+    return () => document.removeEventListener("keydown", handleKeyPress);
+  }, [handleKeyPress]);
 
   return { next, prev };
 }
