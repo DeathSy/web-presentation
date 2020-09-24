@@ -1,13 +1,10 @@
 import React from "react";
-import styled from "styled-components";
 import * as Entypo from "styled-icons/entypo";
 
 function Icon({ name = "", color = "#fff", ...iconProps }) {
-  const IconComponent = styled(Entypo[name] || "div")`
-    color: ${color};
-  `;
+  const IconComponent = Entypo[name];
 
-  return <IconComponent size={30} {...iconProps} />;
+  return <IconComponent size={30} style={{ color }} {...iconProps} />;
 }
 
 export default Icon;
