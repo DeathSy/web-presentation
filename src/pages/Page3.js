@@ -7,7 +7,7 @@ function Page3() {
   return (
     <Presentation contentDirection="column" alignments="center-center">
       <Typography as="h3">
-        Start with create element into root <code>div</code>
+        Start with create element into <code>div#root</code>
       </Typography>
       <Sandbox
         language="html"
