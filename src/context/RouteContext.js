@@ -76,7 +76,7 @@ export function useRouteAction() {
 
   const handleKeyPress = useCallback(
     (event) => {
-      if (event.code === "ArrowRight" || event.code === "Space") next();
+      if (event.code === "ArrowRight") next();
 
       if (event.code === "ArrowLeft") prev();
     },
