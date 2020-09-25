@@ -16,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
     flex: 1;
     font-family: 'Roboto', sans-serif;
     font-size: 40px;
-    user-select: none;
     color: ${Theme.FONT_COLOR};
   }
 
