@@ -11,6 +11,7 @@ import Page4 from "./pages/Page4";
 import Page5 from "./pages/Page5";
 import Page6 from "./pages/Page6";
 import Page7 from "./pages/Page7";
+import Page8 from "./pages/Page8";
 
 const routes = [
   {
@@ -48,6 +49,11 @@ const routes = [
     key: "page7",
     path: "/page7",
     component: Page7,
+  },
+  {
+    key: "page8",
+    path: "/page8",
+    component: Page8,
   },
 ];
 
