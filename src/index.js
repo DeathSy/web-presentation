@@ -7,6 +7,7 @@ import RouteContextProvider from "./context/RouteContext";
 import Page1 from "./pages/Page1";
 import Page2 from "./pages/Page2";
 import Page3 from "./pages/Page3";
+import Page4 from "./pages/Page4";
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     key: "page3",
     path: "/page3",
     component: Page3,
+  },
+  {
+    key: "page4",
+    path: "/page4",
+    component: Page4,
   },
 ];
 
